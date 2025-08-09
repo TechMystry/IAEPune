@@ -289,7 +289,7 @@ export default function AusbildungGermany() {
 
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-indigo-600 min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/germany-bg.jpg')] bg-cover bg-center opacity-30" />
+
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/70 to-indigo-600/70" />
         <motion.div
           variants={containerVariants}
@@ -617,61 +617,7 @@ export default function AusbildungGermany() {
           ))}
         </motion.div>
       </section>
-
-      {/* FAQs Section */}
-      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50" id="faqs">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
-        <motion.h2
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 text-center mb-12 sm:mb-16"
-        >
-          Frequently Asked Questions
-        </motion.h2>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto space-y-4"
-        >
-          {faqs.map((faq, idx) => (
-            <motion.div
-              key={idx}
-              variants={itemVariants}
-              className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden"
-            >
-              <button
-                onClick={() => toggleFaq(idx)}
-                className="w-full flex justify-between items-center p-6 text-left"
-              >
-                <h3 className="font-semibold text-lg lg:text-xl text-gray-900">Q: {faq.question}</h3>
-                <ChevronDown
-                  className={`w-6 h-6 text-blue-600 transition-transform duration-300 ${
-                    activeFaq === idx ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-              <AnimatePresence>
-                {activeFaq === idx && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 pb-6 text-gray-700 text-base lg:text-lg"
-                  >
-                    A: {faq.answer}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
+      
       {/* Testimonials Section */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-teal-50 to-cyan-50">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(45,212,191,0.1),transparent_50%)]" />
