@@ -73,9 +73,9 @@ export default function Footer() {
             <h4 className="text-blue-300 font-semibold mb-2 uppercase tracking-wide text-xs">Contact</h4>
             <ul className="space-y-1 text-gray-300">
               <li>
-                Flat C1, Shree Ganesh Vihar,
+                Flat No. C1, Shree Ganesh Vihar,
                 <br />
-                Kale Padal, Hadapsar, Pune - 411028
+                Sasane Nagar, Kale Padal Road , Hadapsar, Pune - 411028, Maharashtra, India.
               </li>
               <li>
                 📧{' '}
@@ -85,8 +85,8 @@ export default function Footer() {
               </li>
               <li>
                 📞{' '}
-                <a href="tel:+919552929625" className="hover:text-blue-400">
-                  +91 9552929625
+                <a href="tel:+919975042929" className="hover:text-blue-400">
+                  +91 9975042929
                 </a>
               </li>
             </ul>

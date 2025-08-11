@@ -16,7 +16,11 @@ export default function AboutSection() {
   return (
     <section
       id="about-us"
-      className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-gray-50 font-sans scroll-mt-[140px] sm:scroll-mt-[100px]"
+      className="
+        py-10 sm:py-14 px-4 sm:px-6 lg:px-8
+        bg-gray-50 sm:bg-gray-50
+        font-sans scroll-mt-[140px] sm:scroll-mt-[100px]
+      "
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 lg:gap-10">
         
@@ -27,7 +31,7 @@ export default function AboutSection() {
           </h2>
 
           <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-            Founded in 2009 by <span className="font-semibold">Mr. Vishal B.</span>, 
+            Founded in 2009 by <span className="font-semibold">Mr. Vishal Bansode</span>, 
             a passionate mathematics professor and educationist, IAE Pune (Indira Academy of Education) 
             has been guiding students and professionals in shaping their academic and professional futures.
           </p>
@@ -55,7 +59,16 @@ export default function AboutSection() {
         </div>
 
         {/* Right Column - Specializations */}
-        <div className="flex-1 min-w-[260px] bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-4 sm:p-6 shadow-md">
+        <div
+          className="
+            flex-1 min-w-[260px]
+            bg-gradient-to-br from-blue-50 to-green-50
+            sm:rounded-xl sm:shadow-md
+            p-4 sm:p-6
+            rounded-none shadow-none sm:rounded-xl sm:shadow-md
+            sm:mb-0 mb-0
+          "
+        >
           <h3 className="text-base sm:text-xl font-semibold text-blue-900 mb-3 sm:mb-4">
             Our Specializations
           </h3>
@@ -90,7 +103,6 @@ export default function AboutSection() {
             </li>
           </ul>
         </div>
-
       </div>
     </section>
   );

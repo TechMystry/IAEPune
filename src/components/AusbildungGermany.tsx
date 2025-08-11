@@ -619,54 +619,61 @@ export default function AusbildungGermany() {
       </section>
       
       {/* Testimonials Section */}
-      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-teal-50 to-cyan-50">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(45,212,191,0.1),transparent_50%)]" />
-        <motion.h2
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 text-center mb-12 sm:mb-16"
-        >
-          Success Stories
-        </motion.h2>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {testimonials.map((t, idx) => (
-            <motion.div
-              key={idx}
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
-                transition: { duration: 0.3 },
-              }}
-              className={`relative bg-white p-6 rounded-3xl shadow-lg border border-gray-100 overflow-hidden bg-gradient-to-br ${t.gradient}`}
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-indigo-500 text-white flex items-center justify-center rounded-full text-lg font-bold">
-                  {t.name[0]}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">{t.name}</h4>
-                  <p className="text-sm text-gray-600">{t.role}</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic mb-3">"{t.content}"</p>
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                ))}
-              </div>
-            </motion.div>
+<section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-teal-50 to-cyan-50">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(45,212,191,0.1),transparent_50%)]" />
+  <motion.h2
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 text-center mb-12 sm:mb-16"
+  >
+    Success Stories
+  </motion.h2>
+  <motion.div
+    variants={containerVariants}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+  >
+    {[
+      { name: "Niyath B", role: "Student", content: "IAE helped me explore my dream opportunities abroad!", gradient: "from-blue-100 to-blue-50" },
+      { name: "Kavya Pathak", role: "Student", content: "The support from the mentors was truly life-changing.", gradient: "from-purple-100 to-indigo-50" },
+      { name: "Arpan Suryawanshi", role: "Student", content: "Best platform to understand and apply globally.", gradient: "from-pink-100 to-pink-50" },
+      { name: "Ayush Kadam", role: "Student", content: "My experience at IAE has been inspiring and educational.", gradient: "from-green-100 to-green-50" },
+      { name: "Swarupa Patil", role: "Student", content: "Thanks to IAE, I’m now studying at a top German university.", gradient: "from-yellow-100 to-yellow-50" },
+      { name: "Subhan Shaikh", role: "Student", content: "IAE really prepares students for the global stage.", gradient: "from-cyan-100 to-cyan-50" }, // optional extra
+    ].map((t, idx) => (
+      <motion.div
+        key={idx}
+        variants={itemVariants}
+        whileHover={{
+          scale: 1.05,
+          boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
+          transition: { duration: 0.3 },
+        }}
+        className={`relative bg-white p-6 rounded-3xl shadow-lg border border-gray-100 overflow-hidden bg-gradient-to-br ${t.gradient}`}
+      >
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-indigo-500 text-white flex items-center justify-center rounded-full text-lg font-bold">
+            {t.name[0]}
+          </div>
+          <div>
+            <h4 className="font-semibold text-gray-900">{t.name}</h4>
+            <p className="text-sm text-gray-600">{t.role}</p>
+          </div>
+        </div>
+        <p className="text-gray-700 italic mb-3">"{t.content}"</p>
+        <div className="flex gap-1">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
           ))}
-        </motion.div>
-      </section>
+        </div>
+      </motion.div>
+    ))}
+  </motion.div>
+</section>
     </div>
   );
 }

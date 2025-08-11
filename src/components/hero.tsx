@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import ContactModal from "./ContactForm"; // ✅ same modal as in header
+import ContactModal from "./ContactForm";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -36,7 +36,6 @@ export default function Hero() {
   const [deleting, setDeleting] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
 
-  // Typewriter effect
   useEffect(() => {
     if (subIndex === careerOptions[index].length + 1 && !deleting) {
       setTimeout(() => setDeleting(true), 1500);
@@ -58,58 +57,81 @@ export default function Hero() {
 
   return (
     <>
-      <section className="min-h-screen flex items-center bg-gradient-to-b from-blue-50 to-blue-100">
+      <section className="min-h-screen relative overflow-hidden">
+        {/* German Flag Background using image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/germanFlagBackground.png" // Place the uploaded flag image in /public folder
+            alt="German Flag Background"
+            fill
+            priority
+            className="object-cover object-center"
+            style={{ filter: "brightness(0.85) contrast(1.1)" }}
+          />
+
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/60" />
+
+          {/* Moving light sweep for premium feel */}
+          <motion.div
+            animate={{ x: ["-100%", "100%"] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
+          />
+        </div>
+
+        {/* Hero Content */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="show"
-          className="container mx-auto px-4 sm:px-6 md:px-10 flex flex-col-reverse md:flex-row items-center gap-8 sm:gap-10"
+          className="relative z-10 container mx-auto px-4 sm:px-6 md:px-10 flex flex-col-reverse md:flex-row items-center gap-8 sm:gap-10 min-h-screen"
         >
-          {/* Left Content */}
+          {/* Left Text */}
           <div className="flex-1 text-center md:text-left">
             <motion.div
               variants={fadeInUp}
-              className="inline-block bg-blue-100 text-blue-800 text-xs sm:text-sm px-3 py-1 rounded-full mb-4"
+              className="inline-block bg-[#F9E79F] text-black text-xs sm:text-sm px-3 py-1 rounded-full mb-4"
             >
               Indira Academy Education
             </motion.div>
 
             <motion.h1
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight"
             >
               Developing Thoughts for the Future
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
-              className="text-base sm:text-lg text-gray-600 mb-6 max-w-xl mx-auto md:mx-0"
+              className="text-base sm:text-lg text-white mb-6 max-w-xl mx-auto md:mx-0"
             >
               At IAE Pune, our mission is to make global education accessible
               and career-oriented, ensuring every student gets the right
               guidance, support, and opportunities.
             </motion.p>
 
-            {/* Typewriter */}
+            {/* Typewriter Text */}
             <motion.div
               variants={fadeInUp}
-              className="text-lg sm:text-2xl font-semibold text-gray-700 mb-8"
+              className="text-lg sm:text-2xl font-semibold text-[#fef7e5] mb-8"
             >
               Your Gateway to{" "}
-              <span className="text-blue-600 border-r-2 border-blue-600 pr-1">
+              <span className="text-[#FFD700] font-bold border-r-2 border-[#FFD700] pr-1">
                 {displayText}
               </span>
             </motion.div>
 
-            {/* Buttons */}
+            {/* CTA Buttons */}
             <motion.div
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
             >
               <motion.div whileHover={{ scale: 1.05 }}>
                 <button
-                  onClick={() => setShowContactModal(true)} // ✅ opens modal
-                  className="bg-yellow-400 text-gray-800 px-6 py-3 rounded-full hover:bg-yellow-500 transition"
+                  onClick={() => setShowContactModal(true)}
+                  className="bg-white text-black px-6 py-3 rounded-full hover:bg-black hover:text-white transition"
                 >
                   Let's Talk
                 </button>
@@ -122,7 +144,7 @@ export default function Hero() {
             variants={scaleIn}
             className="flex-1 flex justify-center md:justify-end"
           >
-            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-[26rem] md:h-[26rem] rounded-full overflow-hidden shadow-lg bg-blue-200 aspect-square">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-[26rem] md:h-[26rem] rounded-full overflow-hidden shadow-lg border-4 border-[#FFD700]">
               <Image
                 src="/studentPlaceHolder.png"
                 alt="Graduate"
@@ -135,7 +157,7 @@ export default function Hero() {
         </motion.div>
       </section>
 
-      {/* ✅ Contact Modal */}
+      {/* Contact Modal */}
       {showContactModal && (
         <ContactModal
           isOpen={showContactModal}
