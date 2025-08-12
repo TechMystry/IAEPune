@@ -5,7 +5,7 @@ import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Easing } from 'framer-motion';
-
+import ReactCountryFlag from 'react-country-flag';
 import {
   Globe,
   Users,
@@ -59,7 +59,6 @@ const numberVariants = {
     },
   },
 };
-
 
 // Animated Number Component
 const AnimatedNumber = ({
@@ -119,256 +118,256 @@ const AnimatedNumber = ({
 
 const countries = [
   {
-    name: "Russia",
-    flag: "🇷🇺",
-    students: "260,000+",
-    universities: "80+",
-    established: "1706",
+    name: 'Russia',
+    flagCode: 'RU',
+    students: '260,000+',
+    universities: '80+',
+    established: '1706',
     rating: 4.8,
-    description: "Russia boasts a prestigious history in medical education with its first school dating back to 1706. Over 260,000 students are enrolled across 80 universities, many of which are globally ranked.",
+    description: 'Russia boasts a prestigious history in medical education with its first school dating back to 1706. Over 260,000 students are enrolled across 80 universities, many of which are globally ranked.',
     more: "Programs offered include medicine, dentistry, pharmacy, and nursing. Russia's institutions are internationally respected, and graduates can practice globally.",
-    highlights: ["WHO Recognized", "EU Approved", "Global Rankings", "Rich History"],
-    color: "from-red-500 to-red-600",
-    universityImage: "/russia.jpg",
-    topUniversities: ["Moscow State University", "Saint Petersburg State University", "Kazan Federal University"],
+    highlights: ['WHO Recognized', 'EU Approved', 'Global Rankings', 'Rich History'],
+    color: 'from-red-500 to-red-600',
+    universityImage: '/russia.jpg',
+    topUniversities: ['Moscow State University', 'Saint Petersburg State University', 'Kazan Federal University'],
   },
   {
-    name: "Georgia",
-    flag: "🇬🇪",
-    students: "8,000+",
-    universities: "12+",
-    established: "1918",
+    name: 'Georgia',
+    flagCode: 'GE',
+    students: '8,000+',
+    universities: '12+',
+    established: '1918',
     rating: 4.7,
-    description: "Georgia is globally recognized for its medical programs with universities like Tbilisi State Medical University. Programs are WHO and MCI recognized.",
-    more: "The country has 8,000+ students, English-language programs, and globally accepted medical degrees.",
-    highlights: ["WHO & MCI Recognized", "English Programs", "Similar Climate", "Modern Infrastructure"],
-    color: "from-blue-500 to-blue-600",
-    universityImage: "/georgia.jpg",
-    topUniversities: ["Tbilisi State Medical University", "Georgian American University", "Caucasus University"],
+    description: 'Georgia is globally recognized for its medical programs with universities like Tbilisi State Medical University. Programs are WHO and MCI recognized.',
+    more: 'The country has 8,000+ students, English-language programs, and globally accepted medical degrees.',
+    highlights: ['WHO & MCI Recognized', 'English Programs', 'Similar Climate', 'Modern Infrastructure'],
+    color: 'from-blue-500 to-blue-600',
+    universityImage: '/georgia.jpg',
+    topUniversities: ['Tbilisi State Medical University', 'Georgian American University', 'Caucasus University'],
   },
   {
-    name: "Kazakhstan",
-    flag: "🇰🇿",
-    students: "15,000+",
-    universities: "25+",
-    established: "1950",
+    name: 'Kazakhstan',
+    flagCode: 'KZ',
+    students: '15,000+',
+    universities: '25+',
+    established: '1950',
     rating: 4.6,
-    description: "Kazakhstan has become a hotspot for Indian students seeking MBBS due to affordability and NMC-recognized universities.",
-    more: "With modern infrastructure and English-taught courses, it offers high-quality education and globally valid degrees.",
-    highlights: ["NMC Recognized", "Affordable Fees", "Modern Infrastructure", "English Medium"],
-    color: "from-teal-500 to-teal-600",
-    universityImage: "/kazakhstan.jpg",
-    topUniversities: ["Kazakh National Medical University", "Astana Medical University", "South Kazakhstan Medical Academy"],
+    description: 'Kazakhstan has become a hotspot for Indian students seeking MBBS due to affordability and NMC-recognized universities.',
+    more: 'With modern infrastructure and English-taught courses, it offers high-quality education and globally valid degrees.',
+    highlights: ['NMC Recognized', 'Affordable Fees', 'Modern Infrastructure', 'English Medium'],
+    color: 'from-teal-500 to-teal-600',
+    universityImage: '/kazakhstan.jpg',
+    topUniversities: ['Kazakh National Medical University', 'Astana Medical University', 'South Kazakhstan Medical Academy'],
   },
   {
-    name: "Uzbekistan",
-    flag: "🇺🇿",
-    students: "12,000+",
-    universities: "20+",
-    established: "1935",
+    name: 'Uzbekistan',
+    flagCode: 'UZ',
+    students: '12,000+',
+    universities: '20+',
+    established: '1935',
     rating: 4.5,
-    description: "Uzbekistan is emerging as a strong choice for MBBS abroad, offering low fees and globally recognized degrees.",
-    more: "Many universities offer English-medium programs and provide Indian food and hostel facilities.",
-    highlights: ["Low Fees", "Global Recognition", "English Medium", "Indian Food Available"],
-    color: "from-green-500 to-green-600",
-    universityImage: "/uzbekistan.jpg",
-    topUniversities: ["Tashkent Medical Academy", "Andijan State Medical Institute", "Samarkand State Medical Institute"],
+    description: 'Uzbekistan is emerging as a strong choice for MBBS abroad, offering low fees and globally recognized degrees.',
+    more: 'Many universities offer English-medium programs and provide Indian food and hostel facilities.',
+    highlights: ['Low Fees', 'Global Recognition', 'English Medium', 'Indian Food Available'],
+    color: 'from-green-500 to-green-600',
+    universityImage: '/uzbekistan.jpg',
+    topUniversities: ['Tashkent Medical Academy', 'Andijan State Medical Institute', 'Samarkand State Medical Institute'],
   },
   {
-    name: "Kyrgyzstan",
-    flag: "🇰🇬",
-    students: "10,000+",
-    universities: "15+",
-    established: "1939",
+    name: 'Kyrgyzstan',
+    flagCode: 'KG',
+    students: '10,000+',
+    universities: '15+',
+    established: '1939',
     rating: 4.4,
-    description: "Kyrgyzstan is known for its affordable medical education and WHO-approved universities.",
-    more: "Courses are conducted in English, and the education standard is aligned with global practices.",
-    highlights: ["WHO Approved", "Affordable Education", "English Courses", "Global Standards"],
-    color: "from-purple-500 to-purple-600",
-    universityImage: "/kyrgyzstan.jpg",
-    topUniversities: ["Kyrgyz State Medical Academy", "International School of Medicine", "Asian Medical Institute"],
+    description: 'Kyrgyzstan is known for its affordable medical education and WHO-approved universities.',
+    more: 'Courses are conducted in English, and the education standard is aligned with global practices.',
+    highlights: ['WHO Approved', 'Affordable Education', 'English Courses', 'Global Standards'],
+    color: 'from-purple-500 to-purple-600',
+    universityImage: '/kyrgyzstan.jpg',
+    topUniversities: ['Kyrgyz State Medical Academy', 'International School of Medicine', 'Asian Medical Institute'],
   },
   {
-    name: "Nepal",
-    flag: "🇳🇵",
-    students: "8,000+",
-    universities: "18+",
-    established: "1972",
+    name: 'Nepal',
+    flagCode: 'NP',
+    students: '8,000+',
+    universities: '18+',
+    established: '1972',
     rating: 4.3,
-    description: "Nepal is a close-to-home destination with MCI-approved colleges and a similar cultural environment.",
-    more: "Most colleges are affiliated with Indian universities, and the medium of instruction is English.",
-    highlights: ["Close to India", "MCI Approved", "Cultural Similarity", "Indian Affiliation"],
-    color: "from-indigo-500 to-indigo-600",
-    universityImage: "/nepal.jpg",
-    topUniversities: ["Tribhuvan University", "Kathmandu University", "BP Koirala Institute"],
+    description: 'Nepal is a close-to-home destination with MCI-approved colleges and a similar cultural environment.',
+    more: 'Most colleges are affiliated with Indian universities, and the medium of instruction is English.',
+    highlights: ['Close to India', 'MCI Approved', 'Cultural Similarity', 'Indian Affiliation'],
+    color: 'from-indigo-500 to-indigo-600',
+    universityImage: '/nepal.jpg',
+    topUniversities: ['Tribhuvan University', 'Kathmandu University', 'BP Koirala Institute'],
   },
   {
-    name: "Bangladesh",
-    flag: "🇧🇩",
-    students: "20,000+",
-    universities: "35+",
-    established: "1946",
+    name: 'Bangladesh',
+    flagCode: 'BD',
+    students: '20,000+',
+    universities: '35+',
+    established: '1946',
     rating: 4.4,
-    description: "Bangladesh provides quality education following the NMC syllabus and has strong cultural similarities with India.",
-    more: "MBBS degrees from Bangladesh are recognized in India, and the cost of living is very affordable.",
-    highlights: ["NMC Syllabus", "Cultural Similarity", "Recognized in India", "Low Cost of Living"],
-    color: "from-emerald-500 to-emerald-600",
-    universityImage: "/bangladesh.jpg",
-    topUniversities: ["Dhaka Medical College", "Chittagong Medical College", "Ibrahim Medical College"],
+    description: 'Bangladesh provides quality education following the NMC syllabus and has strong cultural similarities with India.',
+    more: 'MBBS degrees from Bangladesh are recognized in India, and the cost of living is very affordable.',
+    highlights: ['NMC Syllabus', 'Cultural Similarity', 'Recognized in India', 'Low Cost of Living'],
+    color: 'from-emerald-500 to-emerald-600',
+    universityImage: '/bangladesh.jpg',
+    topUniversities: ['Dhaka Medical College', 'Chittagong Medical College', 'Ibrahim Medical College'],
   },
   {
-    name: "Romania",
-    flag: "🇷🇴",
-    students: "18,000+",
-    universities: "13+",
-    established: "1857",
+    name: 'Romania',
+    flagCode: 'RO',
+    students: '18,000+',
+    universities: '13+',
+    established: '1857',
     rating: 4.8,
-    description: "Romania has 13 prestigious medical universities. With a tradition since 1857, it is known for affordability and global recognition.",
-    more: "Universities like Carol Davila are highly ranked. Degrees are accepted by WHO and the EU.",
-    highlights: ["EU Member", "WHO & EU Recognized", "Prestigious Universities", "Affordable"],
-    color: "from-yellow-500 to-yellow-600",
-    universityImage: "/romania.jpg",
-    topUniversities: ["Carol Davila University", "Iuliu Hațieganu University", "Victor Babeș University"],
+    description: 'Romania has 13 prestigious medical universities. With a tradition since 1857, it is known for affordability and global recognition.',
+    more: 'Universities like Carol Davila are highly ranked. Degrees are accepted by WHO and the EU.',
+    highlights: ['EU Member', 'WHO & EU Recognized', 'Prestigious Universities', 'Affordable'],
+    color: 'from-yellow-500 to-yellow-600',
+    universityImage: '/romania.jpg',
+    topUniversities: ['Carol Davila University', 'Iuliu Hațieganu University', 'Victor Babeș University'],
   },
   {
-    name: "Armenia",
-    flag: "🇦🇲",
-    students: "5,000+",
-    universities: "8+",
-    established: "1930",
+    name: 'Armenia',
+    flagCode: 'AM',
+    students: '5,000+',
+    universities: '8+',
+    established: '1930',
     rating: 4.5,
-    description: "Armenia offers modern medical education with low costs. Yerevan State Medical University is the most reputed.",
-    more: "It joined the Bologna Process in 2005 ensuring European-standard education.",
-    highlights: ["Bologna Process", "Low Costs", "European Standards", "Modern Education"],
-    color: "from-pink-500 to-pink-600",
-    universityImage: "/armenia.jpg",
-    topUniversities: ["Yerevan State Medical University", "American University of Armenia", "Saint Tereza Medical University"],
+    description: 'Armenia offers modern medical education with low costs. Yerevan State Medical University is the most reputed.',
+    more: 'It joined the Bologna Process in 2005 ensuring European-standard education.',
+    highlights: ['Bologna Process', 'Low Costs', 'European Standards', 'Modern Education'],
+    color: 'from-pink-500 to-pink-600',
+    universityImage: '/armenia.jpg',
+    topUniversities: ['Yerevan State Medical University', 'American University of Armenia', 'Saint Tereza Medical University'],
   },
   {
-    name: "Serbia",
-    flag: "🇷🇸",
-    students: "6,000+",
-    universities: "10+",
-    established: "13th Century",
+    name: 'Serbia',
+    flagCode: 'RS',
+    students: '6,000+',
+    universities: '10+',
+    established: '13th Century',
     rating: 4.6,
-    description: "Serbia has some of the finest medical institutions in the world with a long history of medical education.",
-    more: "Serbia has a growing international student population with globally recognized degrees adhering to European standards.",
-    highlights: ["Global Recognition", "European Standards", "Affordable Living", "Long History"],
-    color: "from-rose-500 to-rose-600",
-    universityImage: "/serbia.jpg",
-    topUniversities: ["University of Belgrade", "University of Novi Sad", "University of Nis"],
+    description: 'Serbia has some of the finest medical institutions in the world with a long history of medical education.',
+    more: 'Serbia has a growing international student population with globally recognized degrees adhering to European standards.',
+    highlights: ['Global Recognition', 'European Standards', 'Affordable Living', 'Long History'],
+    color: 'from-rose-500 to-rose-600',
+    universityImage: '/serbia.jpg',
+    topUniversities: ['University of Belgrade', 'University of Novi Sad', 'University of Nis'],
   },
   {
-    name: "China",
-    flag: "🇨🇳",
-    students: "30,000+",
-    universities: "150+",
-    established: "Early 20th Century",
+    name: 'China',
+    flagCode: 'CN',
+    students: '30,000+',
+    universities: '150+',
+    established: 'Early 20th Century',
     rating: 4.7,
-    description: "China has invested significantly in its medical education system with 50 accredited medical universities offering English-medium programs.",
-    more: "49 Chinese medical schools are recognized by WHO and ECFMG. Over 6,000 graduates gained US residency positions in 2019.",
-    highlights: ["WHO & ECFMG Recognized", "English Medium", "Affordable", "US Residency"],
-    color: "from-red-600 to-orange-500",
-    universityImage: "/china.jpg",
-    topUniversities: ["Shanghai Jiao Tong University", "Peking University", "Fudan University"],
+    description: 'China has invested significantly in its medical education system with 50 accredited medical universities offering English-medium programs.',
+    more: '49 Chinese medical schools are recognized by WHO and ECFMG. Over 6,000 graduates gained US residency positions in 2019.',
+    highlights: ['WHO & ECFMG Recognized', 'English Medium', 'Affordable', 'US Residency'],
+    color: 'from-red-600 to-orange-500',
+    universityImage: '/china.jpg',
+    topUniversities: ['Shanghai Jiao Tong University', 'Peking University', 'Fudan University'],
   },
   {
-    name: "Poland",
-    flag: "🇵🇱",
-    students: "10,000+",
-    universities: "15+",
-    established: "1364",
+    name: 'Poland',
+    flagCode: 'PL',
+    students: '10,000+',
+    universities: '15+',
+    established: '1364',
     rating: 4.8,
-    description: "Poland's education system is highly ranked, with the Cracow Academy being one of the oldest universities.",
-    more: "Safe country, ECTS system, rich culture, and globally recognized degrees with affordable costs.",
-    highlights: ["ECTS System", "Top EU Education", "Affordable", "Rich Culture"],
-    color: "from-red-400 to-white",
-    universityImage: "/poland.jpg",
-    topUniversities: ["Jagiellonian University", "Medical University of Warsaw", "Wroclaw Medical University"],
+    description: 'Poland’s education system is highly ranked, with the Cracow Academy being one of the oldest universities.',
+    more: 'Safe country, ECTS system, rich culture, and globally recognized degrees with affordable costs.',
+    highlights: ['ECTS System', 'Top EU Education', 'Affordable', 'Rich Culture'],
+    color: 'from-red-400 to-white',
+    universityImage: '/poland.jpg',
+    topUniversities: ['Jagiellonian University', 'Medical University of Warsaw', 'Wroclaw Medical University'],
   },
   {
-    name: "Belarus",
-    flag: "🇧🇾",
-    students: "7,000+",
-    universities: "15+",
-    established: "20th Century",
+    name: 'Belarus',
+    flagCode: 'BY',
+    students: '7,000+',
+    universities: '15+',
+    established: '20th Century',
     rating: 4.5,
-    description: "Belarus is home to top WHO-recognized medical universities with modern labs and facilities.",
-    more: "The Belarusian State Medical University ranks globally and provides affordable, practical-oriented education.",
-    highlights: ["WHO Approved", "Advanced Labs", "Affordable", "Modern Infrastructure"],
-    color: "from-green-400 to-red-500",
-    universityImage: "/belarus.jpg",
-    topUniversities: ["Belarusian State Medical University", "Grodno State Medical University", "Vitebsk State Medical University"],
+    description: 'Belarus is home to top WHO-recognized medical universities with modern labs and facilities.',
+    more: 'The Belarusian State Medical University ranks globally and provides affordable, practical-oriented education.',
+    highlights: ['WHO Approved', 'Advanced Labs', 'Affordable', 'Modern Infrastructure'],
+    color: 'from-green-400 to-red-500',
+    universityImage: '/belarus.jpg',
+    topUniversities: ['Belarusian State Medical University', 'Grodno State Medical University', 'Vitebsk State Medical University'],
   },
   {
-    name: "Croatia",
-    flag: "🇭🇷",
-    students: "3,000+",
-    universities: "4+",
-    established: "1917",
+    name: 'Croatia',
+    flagCode: 'HR',
+    students: '3,000+',
+    universities: '4+',
+    established: '1917',
     rating: 4.4,
-    description: "Croatia offers world-class medical education with top universities like the University of Zagreb.",
-    more: "Medical degrees are 6 years with internships. Universities are ranked globally with solid EU standards.",
-    highlights: ["EU Standards", "Global Rankings", "Historic Universities", "Internship Included"],
-    color: "from-blue-400 to-red-400",
-    universityImage: "/croatia.jpg",
-    topUniversities: ["University of Zagreb", "University of Rijeka", "University of Split"],
+    description: 'Croatia offers world-class medical education with top universities like the University of Zagreb.',
+    more: 'Medical degrees are 6 years with internships. Universities are ranked globally with solid EU standards.',
+    highlights: ['EU Standards', 'Global Rankings', 'Historic Universities', 'Internship Included'],
+    color: 'from-blue-400 to-red-400',
+    universityImage: '/croatia.jpg',
+    topUniversities: ['University of Zagreb', 'University of Rijeka', 'University of Split'],
   },
   {
-    name: "Egypt",
-    flag: "🇪🇬",
-    students: "209,000+",
-    universities: "30+",
-    established: "20th Century",
+    name: 'Egypt',
+    flagCode: 'EG',
+    students: '209,000+',
+    universities: '30+',
+    established: '20th Century',
     rating: 4.6,
-    description: "Egypt has a strong medical education system with internationally recognized public universities.",
-    more: "Degrees like MBBCh are offered, with over 30,000 medical seats across 32 medical schools.",
-    highlights: ["MBBCh Degree", "WHO Recognized", "Arab League Member", "High Seat Availability"],
-    color: "from-yellow-500 to-red-500",
-    universityImage: "/egypt.jpg",
-    topUniversities: ["Cairo University", "Ain Shams University", "Alexandria University"],
+    description: 'Egypt has a strong medical education system with internationally recognized public universities.',
+    more: 'Degrees like MBBCh are offered, with over 30,000 medical seats across 32 medical schools.',
+    highlights: ['MBBCh Degree', 'WHO Recognized', 'Arab League Member', 'High Seat Availability'],
+    color: 'from-yellow-500 to-red-500',
+    universityImage: '/egypt.jpg',
+    topUniversities: ['Cairo University', 'Ain Shams University', 'Alexandria University'],
   },
   {
-    name: "Slovakia",
-    flag: "🇸🇰",
-    students: "9,000+",
-    universities: "6+",
-    established: "1919",
+    name: 'Slovakia',
+    flagCode: 'SK',
+    students: '9,000+',
+    universities: '6+',
+    established: '1919',
     rating: 4.5,
-    description: "Slovakia’s medical degrees are recognized globally and comply with EU and Schengen area standards.",
-    more: "Top universities include Comenius University. Uses ECTS system and allows easy credit transfers.",
-    highlights: ["EU Member", "Global Recognition", "Comenius University", "ECTS System"],
-    color: "from-sky-500 to-cyan-600",
-    universityImage: "/slovakia.jpg",
-    topUniversities: ["Comenius University", "Pavol Jozef Šafárik University", "Jessenius Faculty of Medicine"],
+    description: 'Slovakia’s medical degrees are recognized globally and comply with EU and Schengen area standards.',
+    more: 'Top universities include Comenius University. Uses ECTS system and allows easy credit transfers.',
+    highlights: ['EU Member', 'Global Recognition', 'Comenius University', 'ECTS System'],
+    color: 'from-sky-500 to-cyan-600',
+    universityImage: '/slovakia.jpg',
+    topUniversities: ['Comenius University', 'Pavol Jozef Šafárik University', 'Jessenius Faculty of Medicine'],
   },
   {
-    name: "Hungary",
-    flag: "🇭🇺",
-    students: "22,000+",
-    universities: "6+",
-    established: "1367",
+    name: 'Hungary',
+    flagCode: 'HU',
+    students: '22,000+',
+    universities: '6+',
+    established: '1367',
     rating: 4.7,
-    description: "Hungary is popular for its quality medical education with over 4,500 international students annually.",
-    more: "Semmelweis University is Hungary's oldest and ranks globally. Scholarships and work-study options available.",
-    highlights: ["Top Rankings", "Scholarships", "Work While Studying", "Oldest Medical School"],
-    color: "from-pink-400 to-rose-500",
-    universityImage: "/hungary.jpg",
-    topUniversities: ["Semmelweis University", "University of Debrecen", "University of Pecs"],
+    description: 'Hungary is popular for its quality medical education with over 4,500 international students annually.',
+    more: 'Semmelweis University is Hungary’s oldest and ranks globally. Scholarships and work-study options available.',
+    highlights: ['Top Rankings', 'Scholarships', 'Work While Studying', 'Oldest Medical School'],
+    color: 'from-pink-400 to-rose-500',
+    universityImage: '/hungary.jpg',
+    topUniversities: ['Semmelweis University', 'University of Debrecen', 'University of Pecs'],
   },
   {
-    name: "USA via Caribbean",
-    flag: "🌎",
-    students: "10,000+",
-    universities: "60+",
-    established: "20th Century",
+    name: 'USA via Caribbean',
+    flagCode: 'US',
+    students: '10,000+',
+    universities: '60+',
+    established: '20th Century',
     rating: 4.8,
-    description: "Caribbean medical schools are a gateway to practicing in the US, known for USMLE success and match rates.",
-    more: "Graduates often gain residencies in US hospitals. Programs follow US curriculum and standards.",
-    highlights: ["USMLE Focused", "Residency Success", "Global Acceptance", "English Medium"],
-    color: "from-teal-400 to-blue-500",
-    universityImage: "/usa-via-caribbean.jpg",
-    topUniversities: ["Ross University", "St. George’s University", "American University of the Caribbean"],
+    description: 'Caribbean medical schools are a gateway to practicing in the US, known for USMLE success and match rates.',
+    more: 'Graduates often gain residencies in US hospitals. Programs follow US curriculum and standards.',
+    highlights: ['USMLE Focused', 'Residency Success', 'Global Acceptance', 'English Medium'],
+    color: 'from-teal-400 to-blue-500',
+    universityImage: '/usa-via-caribbean.jpg',
+    topUniversities: ['Ross University', 'St. George’s University', 'American University of the Caribbean'],
   },
 ];
 
@@ -472,87 +471,82 @@ export default function MbbsAbroadPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center overflow-hidden bg-gray-950">  
+      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center overflow-hidden bg-gray-950">
+        {/* Main Content */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="relative max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row items-center gap-8 sm:gap-12"
+        >
+          {/* Left Content */}
+          <div className="flex-1 text-center md:text-left z-10">
+            <motion.div
+              variants={itemVariants}
+              className="inline-block bg-white/10 text-amber-300 text-xs sm:text-sm px-4 py-2 rounded-full mb-4 backdrop-blur-sm"
+            >
+              Indira Academy Education
+            </motion.div>
 
-  {/* Main Content */}
-  <motion.div
-    variants={containerVariants}
-    initial="hidden"
-    animate="show"
-    className="relative max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row items-center gap-8 sm:gap-12"
-  >
-    {/* Left Content */}
-    <div className="flex-1 text-center md:text-left z-10">
-      <motion.div
-        variants={itemVariants}
-        className="inline-block bg-white/10 text-amber-300 text-xs sm:text-sm px-4 py-2 rounded-full mb-4 backdrop-blur-sm"
-      >
-        Indira Academy Education
-      </motion.div>
+            <motion.h1
+              variants={itemVariants}
+              className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight"
+            >
+              Become a Global Doctor
+            </motion.h1>
 
-      <motion.h1
-        variants={itemVariants}
-        className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight"
-      >
-        Become a Global Doctor
-      </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              className="text-base sm:text-lg text-gray-300 mb-6 max-w-xl mx-auto md:mx-0"
+            >
+              Study MBBS abroad at top universities with IAE Pune’s expert guidance. Affordable, globally recognized, and English-taught programs await you.
+            </motion.p>
 
-      <motion.p
-        variants={itemVariants}
-        className="text-base sm:text-lg text-gray-300 mb-6 max-w-xl mx-auto md:mx-0"
-      >
-        Study MBBS abroad at top universities with IAE Pune’s expert guidance. Affordable, globally recognized, and English-taught programs await you.
-      </motion.p>
+            <motion.div
+              variants={itemVariants}
+              className="text-lg sm:text-2xl font-semibold text-amber-200 mb-8"
+            >
+              Your Journey to{' '}
+              <span className="text-pink-300 border-r-2 border-pink-300 pr-1">
+                {displayText}
+              </span>
+            </motion.div>
 
-      <motion.div
-        variants={itemVariants}
-        className="text-lg sm:text-2xl font-semibold text-amber-200 mb-8"
-      >
-        Your Journey to{' '}
-        <span className="text-pink-300 border-r-2 border-pink-300 pr-1">
-          {displayText}
-        </span>
-      </motion.div>
+            {/* CTA Buttons */}
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
+              <motion.div whileHover={{ scale: 1.1, x: 5 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  href="#universities"
+                  className="bg-amber-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-amber-300 transition shadow-md hover:shadow-lg"
+                >
+                  Explore Medical Universities
+                </Link>
+              </motion.div>
+            </motion.div>
+          </div>
 
-      {/* CTA Buttons */}
-      <motion.div
-        variants={itemVariants}
-        className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-      >
-        <motion.div whileHover={{ scale: 1.1, x: 5 }} whileTap={{ scale: 0.95 }}>
-          <Link
-            href="#universities"
-            className="bg-amber-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-amber-300 transition shadow-md hover:shadow-lg"
+          {/* Right Image */}
+          <motion.div
+            variants={itemVariants}
+            className="flex-1 flex justify-center md:justify-end"
           >
-            Explore Medical Universities
-          </Link>
+            <div
+              className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[36rem] md:h-[36rem] rounded-2xl overflow-visible shadow-2xl"
+            >
+              <Image
+                src="/MBBS.png"
+                alt="Medical Student Abroad"
+                fill
+                className="object-cover transform hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 200px, (max-width: 1024px) 300px, 400px"
+              />
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </div>
-
-    {/* Right Image */}
-<motion.div
-  variants={itemVariants}
-  className="flex-1 flex justify-center md:justify-end"
->
-  <div
-    className="relative
-               w-64 h-64 sm:w-80 sm:h-80 md:w-[36rem] md:h-[36rem]
-               rounded-2xl overflow-visible shadow-2xl" // changed overflow-hidden to overflow-visible
-  >
-    <Image
-      src="/MBBS.png"
-      alt="Medical Student Abroad"
-      fill
-      className="object-cover transform hover:scale-105 transition-transform duration-700"
-      sizes="(max-width: 768px) 200px, (max-width: 1024px) 300px, 400px"
-    />
-  </div>
-</motion.div>
-
-  </motion.div>
-</section>
-
+      </section>
 
       {/* Stats Section */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -612,7 +606,21 @@ export default function MbbsAbroadPage() {
                 />
               </div>
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-3xl">{country.flag}</span>
+                <ReactCountryFlag
+                  countryCode={country.flagCode}
+                  svg
+                  style={{
+                    width: '2.25rem',
+                    height: '2.25rem',
+                    fontSize: '2.25rem',
+                    lineHeight: '2.25rem',
+                    objectFit: 'contain',
+                  }}
+                  className="drop-shadow-md"
+                  title={country.name}
+                  aria-label={`${country.name} flag`}
+                  onError={() => console.error(`Failed to load flag for ${country.name}`)}
+                />
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{country.name}</h3>
               </div>
               <p className="text-gray-600 text-sm lg:text-base mb-3">{country.description}</p>
@@ -744,7 +752,7 @@ export default function MbbsAbroadPage() {
             </motion.div>
           ))}
         </motion.div>
-      </section>      
+      </section>
     </div>
   );
 }
