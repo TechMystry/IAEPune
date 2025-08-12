@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ContactModal from "./ContactForm";
 
@@ -13,11 +12,11 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Global Careers", href: "/global-careers" }, // maps to src/app/global/page.tsx
-    { name: "Study Abroad", href: "/study-abroad" }, // maps to src/app/studyabroad/page.tsx
-    { name: "MBBS Abroad", href: "/mbbs-abroad" }, // maps to src/app/mbbsabroad/page.tsx
+    { name: "Global Careers", href: "/global-careers" },
+    { name: "Study Abroad", href: "/study-abroad" },
+    { name: "MBBS Abroad", href: "/mbbs-abroad" },
     { name: "Ausbildung", href: "/AusbildungGermany" },
-    { name: "About Us", href: "/about" }, // you'll need to move about.tsx to app/about/page.tsx
+    { name: "About Us", href: "/about" },
   ];
 
   const handleClick = (e: React.MouseEvent, href: string) => {
@@ -36,18 +35,21 @@ export default function Header() {
 
   return (
     <>
-       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-gray-200 shadow-sm text-black">
-        <div className="flex items-center justify-between px-4 md:px-10 py-2">
+      {/* Fixed Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-gray-200 shadow-sm text-black">
+        <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 py-2">
           {/* Logo Section */}
           <div className="flex flex-col leading-tight text-[#1e3a8a]">
-            <span className="text-lg md:text-xl font-bold">IAE Pune</span>
-            <span className="text-[10px] md:text-xs opacity-80">
+            <span className="text-base sm:text-lg md:text-xl font-bold">
+              IAE Pune
+            </span>
+            <span className="text-[9px] sm:text-[10px] md:text-xs opacity-80">
               Global Education Partner Since 2009
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-6 items-center">
+          <nav className="hidden md:flex gap-4 lg:gap-6 items-center">
             {navLinks.map((link) => (
               <button
                 key={link.name}
@@ -82,13 +84,13 @@ export default function Header() {
 
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white/90 backdrop-blur-md border-t border-gray-200 shadow-lg">
-            <nav className="flex flex-col items-start p-4 space-y-3">
+          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg w-full">
+            <nav className="flex flex-col items-start p-4 space-y-2">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
                   onClick={(e) => handleClick(e, link.href)}
-                  className="w-full text-left text-black text-sm font-medium py-2 border-b border-gray-100 last:border-none"
+                  className="w-full text-left text-black text-sm font-medium py-2 px-2 border-b border-gray-100 last:border-none"
                 >
                   {link.name}
                 </button>
@@ -114,6 +116,12 @@ export default function Header() {
           onClose={() => setShowContactModal(false)}
         />
       )}
+
+      {/* Spacer to prevent overlap */}
+      <div className="h-16 md:h-20" />
+
+      {/* Example Image or Content (can be replaced in your pages) */}
+      {/* <img src="/your-image.jpg" alt="Example" className="w-full" /> */}
     </>
   );
 }

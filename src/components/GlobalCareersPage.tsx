@@ -315,20 +315,21 @@ export default function GlobalCareersPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="relative py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white min-h-[100vh] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]" />
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
-        >
-          {stats.map((stat, idx) => (
-            <AnimatedNumber key={idx} {...stat} />
-          ))}
-        </motion.div>
-      </section>
+<section className="relative py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8 bg-white">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)] pointer-events-none" />
+  <motion.div
+    variants={containerVariants}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+  >
+    {stats.map((stat, idx) => (
+      <AnimatedNumber key={idx} {...stat} />
+    ))}
+  </motion.div>
+</section>
+
 
       {/* Careers List */}
       <section className="relative py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-teal-50 min-h-[100vh] flex items-center justify-center" id="careers">

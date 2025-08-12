@@ -31,7 +31,7 @@ export default function AboutSection() {
           </h2>
 
           <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-            Founded in 2009 by <span className="font-semibold">Mr. Vishal Bansode</span>, 
+            Founded in 2009 by <span className="font-semibold">Mr. Vishal Bansodee</span>, 
             a passionate mathematics professor and educationist, IAE Pune (Indira Academy of Education) 
             has been guiding students and professionals in shaping their academic and professional futures.
           </p>

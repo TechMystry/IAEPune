@@ -102,7 +102,7 @@ export default function Footer() {
             <motion.a
               variants={scaleIn}
               whileHover={{ scale: 1.05 }}
-              href="https://wa.me/9552929625"
+              href="https://wa.me/919975042929"
               className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm"
             >
               <FaWhatsapp size={16} /> WhatsApp
@@ -118,7 +118,16 @@ export default function Footer() {
           </div>
           <div className="text-xs text-gray-400 text-center md:text-right">
             <p>© 2025 IAE Pune. All rights reserved.</p>
-            <p className="text-blue-300">Managed by Techmystry</p>
+            <p>
+              <a
+                href="https://wa.me/918805526198"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-300 hover:text-blue-400"
+              >
+                Managed by Techmystry
+              </a>
+            </p>
           </div>
         </motion.div>
       </motion.div>
