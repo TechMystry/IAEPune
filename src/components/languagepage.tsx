@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import dynamic from "next/dynamic";
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
 import { 
   BookOpen, 
@@ -20,7 +21,10 @@ import {
   Zap,
   Heart
 } from 'lucide-react';
-import { Player } from '@lottiefiles/react-lottie-player';
+const Player = dynamic(
+  () => import('@lottiefiles/react-lottie-player').then(mod => mod.Player),
+  { ssr: false } // only render on client
+);
 import calculatorAnimation from '../../public/heroAnimation.json';
 
 // Animated Counter Component
