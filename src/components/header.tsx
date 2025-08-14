@@ -18,7 +18,7 @@ export default function Header() {
     { name: "Ausbildung", href: "/AusbildungGermany" },
     {
       name: "Language Learning",
-      href: "http://192.168.31.94:3007/language",
+      href: "/learn-languages",
       external: true,
     },
     { name: "About Us", href: "/about" },
