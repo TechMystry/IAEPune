@@ -17,7 +17,7 @@ export default function Header() {
     { name: "MBBS Abroad", href: "/mbbs-abroad" },
     { name: "Ausbildung", href: "/AusbildungGermany" },
     {
-      name: "Language Learning",
+      name: "Learn Languages",
       href: "/learn-languages",
       external: true,
     },
