@@ -16,11 +16,26 @@ export default function Header() {
     { name: "Study Abroad", href: "/study-abroad" },
     { name: "MBBS Abroad", href: "/mbbs-abroad" },
     { name: "Ausbildung", href: "/AusbildungGermany" },
+    {
+      name: "Language Learning",
+      href: "http://192.168.31.94:3007/language",
+      external: true,
+    },
     { name: "About Us", href: "/about" },
   ];
 
-  const handleClick = (e: React.MouseEvent, href: string) => {
+  const handleClick = (
+    e: React.MouseEvent,
+    href: string,
+    external?: boolean
+  ) => {
     e.preventDefault();
+
+    if (external) {
+      window.location.href = href; // Open in same tab
+      return;
+    }
+
     if (href.startsWith("#")) {
       const section = document.querySelector(href);
       if (section) {
@@ -53,7 +68,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={(e) => handleClick(e, link.href)}
+                onClick={(e) => handleClick(e, link.href, link.external)}
                 className="relative text-black text-sm font-medium hover:text-black transition-colors duration-300 
                   after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] 
                   after:bg-gradient-to-r after:from-[#2f68ff] after:to-[#9f44ff] 
@@ -89,7 +104,7 @@ export default function Header() {
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={(e) => handleClick(e, link.href)}
+                  onClick={(e) => handleClick(e, link.href, link.external)}
                   className="w-full text-left text-black text-sm font-medium py-2 px-2 border-b border-gray-100 last:border-none"
                 >
                   {link.name}
@@ -117,11 +132,8 @@ export default function Header() {
         />
       )}
 
-      {/* Spacer to prevent overlap */}
+      {/* Spacer to prevent content being hidden behind header */}
       <div className="h-16 md:h-20" />
-
-      {/* Example Image or Content (can be replaced in your pages) */}
-      {/* <img src="/your-image.jpg" alt="Example" className="w-full" /> */}
     </>
   );
 }
