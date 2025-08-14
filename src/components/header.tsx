@@ -50,19 +50,18 @@ export default function Header() {
 
   return (
     <>
-      {/* Fixed Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-gray-200 shadow-sm text-black">
-        <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 py-2">
-          {/* Logo Section */}
-          <div className="flex flex-col leading-tight text-[#1e3a8a]">
-            <span className="text-base sm:text-lg md:text-xl font-bold">
-              IAE Pune
-            </span>
-            <span className="text-[9px] sm:text-[10px] md:text-xs opacity-80">
-              Global Education Partner Since 2009
-            </span>
-          </div>
-
+    {/* Fixed Header */}
+<header className="fixed top-0 left-0 right-0 z-50 bg-white text-black shadow-sm">
+  <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 py-2">
+    {/* Logo Section */}
+    <div className="flex flex-col leading-tight text-[#1e3a8a]">
+      <span className="text-base sm:text-lg md:text-xl font-bold">
+        IAE Pune
+      </span>
+      <span className="text-[9px] sm:text-[10px] md:text-xs opacity-80">
+        Global Education Partner Since 2009
+      </span>
+    </div>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-4 lg:gap-6 items-center">
             {navLinks.map((link) => (
@@ -131,9 +130,6 @@ export default function Header() {
           onClose={() => setShowContactModal(false)}
         />
       )}
-
-      {/* Spacer to prevent content being hidden behind header */}
-      <div className="h-16 md:h-20" />
     </>
   );
 }
