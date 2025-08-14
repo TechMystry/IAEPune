@@ -140,132 +140,103 @@ export default function LanguagePage() {
         style={{ scaleX, transformOrigin: '0%' }} 
       />
 
-      {/* Hero Section */}
-<section className="relative h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 overflow-hidden">
-  {/* Animated Background Elements */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 overflow-hidden">
+  {/* Background Elements (Reduced on mobile) */}
   <div className="absolute inset-0">
     <motion.div 
-      className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"
-      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+      className="hidden sm:block absolute top-20 left-10 w-56 md:w-72 h-56 md:h-72 bg-blue-500/10 rounded-full blur-2xl will-change-transform"
+      animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.6, 0.3] }}
       transition={{ duration: 4, repeat: Infinity }}
     />
     <motion.div 
-      className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
-      animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.7, 0.4] }}
+      className="absolute bottom-10 right-6 w-64 md:w-96 h-64 md:h-96 bg-purple-500/10 rounded-full blur-2xl will-change-transform"
+      animate={{ scale: [1.1, 1, 1.1], opacity: [0.4, 0.7, 0.4] }}
       transition={{ duration: 5, repeat: Infinity }}
-    />
-    <motion.div 
-      className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"
-      animate={{ x: [-100, 100, -100], y: [-50, 50, -50] }}
-      transition={{ duration: 8, repeat: Infinity }}
     />
   </div>
 
+  {/* Content */}
   <motion.div 
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 1 }}
-    className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+    className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
   >
-    {/* Left Content */}
-    <div className="text-center lg:text-left space-y-8">
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-      >
-        <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6">
-          <Star className="w-4 h-4 mr-2 text-yellow-400" />
-          Indira Academy Education
-        </div>
-      </motion.div>
+    {/* Left Side */}
+    <div className="text-center lg:text-left space-y-6 sm:space-y-8">
+      <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-xs sm:text-sm font-medium">
+        <Star className="w-4 h-4 mr-2 text-yellow-400" />
+        Indira Academy Education
+      </div>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-      >
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-          World-Class Online
-          <span className="block bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 bg-clip-text text-transparent text-2xl sm:text-3xl lg:text-4xl mt-2">
-            <TypingAnimation texts={subjects} />
-          </span>
-        </h1>
-      </motion.div>
+      <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        World-Class Online
+        <span className="block bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 bg-clip-text text-transparent text-xl sm:text-3xl lg:text-4xl mt-2">
+          <TypingAnimation texts={subjects} />
+        </span>
+      </h1>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-      >
-        <p className="text-xl text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-          Master Mathematics and Languages from anywhere in the world. Quality education with personalized attention for students from Class 5 to 12.
-        </p>
-      </motion.div>
+      <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+        Master Mathematics and Languages from anywhere in the world. Quality education with personalized attention for students from Class 5 to 12.
+      </p>
 
-      <motion.div 
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.8 }}
-  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
->
-  <motion.a
-    href="https://wa.me/919975042929"
-    target="_blank"
-    rel="noopener noreferrer"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="inline-flex justify-center items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-green-500 to-green-700 text-white text-sm sm:text-base font-semibold rounded-full shadow-md hover:shadow-xl transition-all duration-300 max-w-xs sm:max-w-none w-full sm:w-auto mx-auto sm:mx-0"
-  >
-    <Phone className="w-4 h-4 mr-2" />
-    <span className="whitespace-nowrap">WhatsApp: +91 9975042929</span>
-  </motion.a>
-</motion.div>
-
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+        <motion.a
+          href="https://wa.me/919975042929"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex justify-center items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-green-500 to-green-700 text-white text-sm sm:text-base font-semibold rounded-full shadow-md hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+        >
+          <Phone className="w-4 h-4 mr-2" />
+          WhatsApp: +91 9975042929
+        </motion.a>
+      </div>
     </div>
 
-    {/* Right Content - Animated Illustration */}
+    {/* Right Side */}
     <motion.div 
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 1, duration: 0.8 }}
+      transition={{ delay: 0.5, duration: 0.8 }}
       className="relative flex justify-center lg:justify-end"
     >
-      <div className="relative w-full max-w-md lg:max-w-lg">
+      <div className="relative w-full max-w-[280px] sm:max-w-md lg:max-w-lg">
         {/* Main Circle */}
         <motion.div 
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto"
+          animate={{ scale: [1, 1.03, 1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto will-change-transform"
         >
-          <div className="w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
-            <Calculator className="w-20 h-20 lg:w-24 lg:h-24 text-white" />
+          <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
+            <Calculator className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-white" />
           </div>
         </motion.div>
 
-        {/* Floating Elements */}
+        {/* Floating Icons */}
         <motion.div 
-          animate={{ y: [-10, 10, -10] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-xl"
+          animate={{ y: [-8, 8, -8] }}
+          transition={{ duration: 3, repeat: Infinity }}
+          className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-gradient-to-r from-yellow-400 to-orange-500 p-3 sm:p-4 rounded-full shadow-xl will-change-transform"
         >
-          <BookOpen className="w-8 h-8 text-white" />
+          <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
         </motion.div>
         
         <motion.div 
-          animate={{ y: [-10, 10, -10] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute -bottom-4 -left-4 bg-gradient-to-r from-green-400 to-blue-500 p-4 rounded-full shadow-xl"
+          animate={{ y: [-8, 8, -8] }}
+          transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+          className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-gradient-to-r from-green-400 to-blue-500 p-3 sm:p-4 rounded-full shadow-xl will-change-transform"
         >
-          <Languages className="w-8 h-8 text-white" />
+          <Languages className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
         </motion.div>
         
         <motion.div 
-          animate={{ y: [-10, 10, -10] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-1/2 -left-8 bg-gradient-to-r from-pink-500 to-red-500 p-3 rounded-full shadow-xl"
+          animate={{ y: [-8, 8, -8] }}
+          transition={{ duration: 3, repeat: Infinity, delay: 2 }}
+          className="absolute top-1/2 -left-6 sm:-left-8 bg-gradient-to-r from-pink-500 to-red-500 p-2 sm:p-3 rounded-full shadow-xl will-change-transform"
         >
-          <Star className="w-6 h-6 text-white" />
+          <Star className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </motion.div>
       </div>
     </motion.div>
@@ -306,138 +277,170 @@ export default function LanguagePage() {
         </motion.div>
       </section>
 
-      {/* Mathematics Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+     {/* Mathematics Section */}
+<section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          World-Class Online Mathematics Classes
+        </h2>
+        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          Master Mathematics from anywhere in the world with Mr. Vishal Bansode
+        </p>
+      </motion.div>
+    </div>
+
+    {/* Features Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-8">
+      {mathFeatures.map((feature, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          transition={{ delay: index * 0.05, duration: 0.4 }}
+          className="flex items-center p-4 sm:p-5 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-200"
         >
-          <div className="text-center mb-16">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                World-Class Online Mathematics Classes
-                <span className="text-6xl ml-4"></span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Master Mathematics from anywhere in the world with Mr. Vishal Bansodee
-              </p>
-            </motion.div>
+          <div
+            className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 
+            bg-gradient-to-r from-blue-600 to-purple-600 
+            rounded-full flex items-center justify-center text-white mr-4"
+          >
+            {feature.icon}
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-  {mathFeatures.map((feature, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.6 }}
-      className="flex items-center p-4 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
-    >
-      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white mr-4">
-        {feature.icon}
-      </div>
-      <p className="text-gray-700 font-medium">{feature.text}</p>
-    </motion.div>
-  ))}
-</div>
-
+          <p className="text-gray-700 text-sm sm:text-base font-medium leading-snug">
+            {feature.text}
+          </p>
         </motion.div>
-      </section>
+      ))}
+    </div>
+  </motion.div>
+</section>
 
-      {/* Language Classes Section */}
-    <section className="py-20 bg-white">
+
+     {/* Language Classes Section */}
+<section className="py-20 bg-white">
   <motion.div
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
-    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
   >
-    {languages.map((language, index) => (
+    {/* Heading */}
+    <div className="text-center mb-16">
       <motion.div
-        key={index}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: index * 0.1, duration: 0.6 }}
-        whileHover={{ y: -10, scale: 1.02 }}
-        className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-xl border border-gray-100 text-center hover:shadow-2xl transition-all duration-300"
+        transition={{ duration: 0.6 }}
       >
-    {/* Flag Image */}
-      <img
-        src={language.flagUrl}
-        alt={`${language.name} Flag`}
-        className="mx-auto w-16 h-16 mb-4 object-cover shadow-sm"
-        loading="lazy"
-      />
-      <h3 className="text-2xl font-bold text-gray-900 mb-4">{language.name}</h3>
-      <div className="w-full h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mb-4"></div>
-      <p className="text-gray-600 font-medium">Professional Course</p>
-    </motion.div>
-  ))}
-</motion.div>
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Learn Global Languages 🌍
+        </h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          Master professional languages with expert-led online classes.
+        </p>
+      </motion.div>
+    </div>
+
+    {/* Language Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {languages.map((language, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1, duration: 0.6 }}
+          whileHover={{ y: -10, scale: 1.02 }}
+          className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-xl border border-gray-100 text-center hover:shadow-2xl transition-all duration-300"
+        >
+          {/* Flag */}
+          <img
+            src={language.flagUrl}
+            alt={`${language.name} Flag`}
+            className="mx-auto w-16 h-16 mb-4 object-cover shadow-sm rounded-full"
+            loading="lazy"
+          />
+          {/* Title */}
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            {language.name}
+          </h3>
+          {/* Divider */}
+          <div className="w-full h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mb-4"></div>
+          {/* Subtitle */}
+          <p className="text-gray-600 font-medium">Professional Course</p>
+        </motion.div>
+      ))}
+    </div>
+  </motion.div>
 </section>
 
+{/* Benefits Section */}
+<section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Why Choose Our Classes? ✨
+        </h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          Experience learning like never before — engaging, flexible, and effective.
+        </p>
+      </motion.div>
+    </div>
 
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+    {/* Benefits Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {benefits.map((benefit, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          transition={{ delay: index * 0.1, duration: 0.6 }}
+          whileHover={{ y: -5 }}
+          className="bg-white p-6 rounded-2xl shadow-xl text-center hover:shadow-2xl transition-all duration-300"
         >
-          <div className="text-center mb-16">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Why Choose Our Classes? ✨
-              </h2>
-            </motion.div>
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white mb-6">
+            {benefit.icon}
           </div>
-
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ y: -5 }}
-                className="bg-white p-6 rounded-2xl shadow-xl text-center hover:shadow-2xl transition-all duration-300"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white mb-6">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <h3 className="text-xl font-bold text-gray-900 mb-4">
+            {benefit.title}
+          </h3>
+          <p className="text-gray-600">{benefit.desc}</p>
         </motion.div>
-      </section>
+      ))}
+    </div>
+  </motion.div>
+</section>
+
 
       {/* Final CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-900 via-purple-900 to-indigo-900 relative overflow-hidden">
