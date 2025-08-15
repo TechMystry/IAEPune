@@ -301,7 +301,7 @@ export default function LanguagePage() {
           World-Class Online Mathematics Classes
         </h2>
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-          Master Mathematics from anywhere in the world with Mr. Vishal Bansode
+          Master Mathematics from anywhere in the world with Mr. Vishal Bansodee
         </p>
       </motion.div>
     </div>
