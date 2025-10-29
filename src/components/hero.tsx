@@ -11,7 +11,7 @@ const fadeInUp: Variants = {
 };
 
 const scaleIn: Variants = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.95 },
   show: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
@@ -57,7 +57,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative overflow-hidden pt-28 md:pt-20 pb-10 md:pb-0 min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden pt-28 md:pt-20 pb-10 md:pb-0 min-h-screen flex items-center">
         {/* Background */}
         <div className="absolute inset-0 -z-10">
           <Image
@@ -131,7 +131,7 @@ export default function Hero() {
             variants={scaleIn}
             className="flex-1 flex justify-center md:justify-end"
           >
-            <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-[24rem] md:h-[24rem] rounded-full overflow-hidden shadow-lg border-4 border-[#FFD700] mt-4 md:mt-0">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden shadow-lg border-4 border-[#FFD700] mt-4 md:mt-0">
               <Image
                 src="/studentPlaceHolder.png"
                 alt="Graduate"
